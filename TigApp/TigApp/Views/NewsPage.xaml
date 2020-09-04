@@ -2,11 +2,55 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TigApp.Views.NewsPage">
+    
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+            <Label Text="" HorizontalOptions="Center" FontAttributes="Bold" FontSize="12" Padding="0,8,0,8"/>
+            <Image Source="tigLogo.png" VerticalOptions="Center" HeightRequest="64" />
+            <Label Text="I_AM_BECOME" HorizontalOptions="Center" FontAttributes="Bold" FontSize="24" Padding="0,20,0,20"/>
+      
+        <CollectionView ItemsSource="{Binding Works}"
+                            ItemsLayout="VerticalList">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+
+                    <Grid Padding="10" Margin="12">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="3*" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="{Binding ImageUrl}"
+                                       Grid.RowSpan="2"
+                                       Aspect="AspectFill"
+                               WidthRequest="100"
+                                       HeightRequest="150" />
+
+                        <Label Grid.Column="1"
+                                       VerticalOptions="Center"
+                                       Text="{Binding Title}"
+                                       FontAttributes="Bold" />
+
+
+                        <Label Text=""
+                                       Grid.Row="1"
+                                       Grid.Column="1"
+                                       VerticalOptions="Start"
+                                       FontAttributes="Italic" />
+                    </Grid>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -29,6 +29,7 @@
             </StackLayout>
             <Label Text="Tokyo International Gallery" HorizontalOptions="Center" FontAttributes="Bold" FontSize="24"/>
         </StackLayout>
+        
         <ScrollView Grid.Row="1">
             <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
                 <!--<Label Text="Tokyo International Gallery" FontSize="24"/>
